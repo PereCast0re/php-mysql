@@ -46,32 +46,4 @@ $users = [
     ],
 ];
 
-function displayAuthor(string $authorEmail, array $users) : string
-{
-    for ($i = 0; $i < count($users); $i++){
-        $author = $users[$i];
-        if ($authorEmail == $author['email']){
-            return $author['full_name'] . '(' . $author['age'] . 'ans)';
-        }
-    }
-}
-
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Affichage des recettes</title>
-    <link rel="stylesheet" href="style.css" rel="stylesheet">
-</head>
-<body>
-    <ul>
-        <h1 class="title"> Affichage des recettes </h1>
-        <?php foreach($recipes as $recipe) {
-            if ($recipe['is_enabled'] == true){
-                echo '<h2 class="r_title">' . $recipe['title'] . '</h2>' . displayAuthor($recipe['author'], $users) . '<br> <br>';}
-            }
-        ?>
-    </ul>
-</body>
-</html>
