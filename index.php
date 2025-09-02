@@ -26,6 +26,9 @@
             <i><?php echo display_author($recipe['author'], $users); ?> </i>
         </article>
         <?php endforeach ?>
+        
+        <!--Btn de redirection page contact-->
+        <a href='contact.php'>Contactez nous</a>
     </div>
     <!-- inclusion du bas de page du site -->
     <?php include_once('footer.php'); ?>
