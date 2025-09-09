@@ -9,7 +9,7 @@
     <?php include('header.php') ?>
 
     <h1>Contactez nous</h1>
-    <form action="submit_contact.php" method="GET">
+    <form action="submit_contact.php" method="POST">
         <div>
         <label for='email' >Email </label>
             <br>
