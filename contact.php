@@ -9,17 +9,20 @@
     <?php include('header.php') ?>
 
     <h1>Contactez nous</h1>
-    <form action="contact" method="post">
+    <form action="submit_contact.php" method="GET">
+        <div>
         <label for='email' >Email </label>
-        <br>
-        <input class="contact_element" type='text' id='email' name='email' required>
-        <p class="txtprevention">Nous ne revendrons pas votre email</p>
-
-        <label for='message'>Votre Message</label>
-        <br>
-        <textarea class="contact_element" id='message' name='message' rows="5" placeholder="Exprimez vous" required></textarea>
+            <br>
+            <input class="contact_element" type='text' id='email' name='email' required>
+            <p class="txtprevention">Nous ne revendrons pas votre email</p>
+        </div>
+        <div>
+            <label for='message'>Votre Message</label>
+            <br>
+            <textarea class="contact_element" id='message' name='message' rows="5" placeholder="Exprimez vous" required></textarea>
+        </div>
+        <button class="btn_contact" type="submite">Envoyer</button>
     </form>
-    <button class="btn_contact" type="submite">Envoyer</button>
 
     <?php include('footer.php') ?>
 </body>
