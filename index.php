@@ -19,16 +19,23 @@
         ?>
         <!-- inclusion de l'entête du site -->
         <?php include_once('header.php'); ?>
-        <?php foreach(get_recipes($recipes) as $recipe) : ?>
-        <article>
-            <h3><?php echo $recipe['title']; ?> </h3>
-            <div><?php echo $recipe['recipe']; ?> </div>
-            <i><?php echo display_author($recipe['author'], $users); ?> </i>
-        </article>
-        <?php endforeach ?>
-        
-        <!--Btn de redirection page contact-->
-        <a href='contact.php'>Contactez nous</a>
+
+        <!-- inclusion du login -->
+        <?php include_once('login.php'); ?>
+
+        <?php if(isset($loggedUser)): ?>
+            <?php foreach(get_recipes($recipes) as $recipe) : ?>
+            <article>
+                <h3><?php echo $recipe['title']; ?> </h3>
+                <div><?php echo $recipe['recipe']; ?> </div>
+                <i><?php echo display_author($recipe['author'], $users); ?> </i>
+            </article>
+            
+            <!--Btn de redirection page contact-->
+            <a href='contact.php'>Contactez nous</a>
+            <?php endforeach ?>
+        <?php endif ?>
+
     </div>
     <!-- inclusion du bas de page du site -->
     <?php include_once('footer.php'); ?>
