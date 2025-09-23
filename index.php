@@ -48,6 +48,12 @@ session_start();
                     </article>
             <?php endforeach ?>
         <?php endif ?>
+        
+        <br>
+
+        <a href="ajout_recette_form.php">Ajouter une recette</a>
+
+        <br>
     
         <!--Btn de redirection page contact-->
         <a href='contact.php'>Contactez nous</a>

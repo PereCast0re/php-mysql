@@ -2,11 +2,9 @@
 <nav class="menu" id="menu">        
     <div class="element_menu">
         <h3>Site de recettes </h3>
-        <button class="burger" id="burger">&#9776;</button>
         <ul>
-            <li><a href="page1.html">Lien</a></li>
-            <li><a href="page2.html">Lien</a></li>
-            <li><a href="page3.html">Lien</a></li>
+            <a href="index.php">Acceuil</a>
+            <a href="contact.php">Contact</a>
         </ul>
     </div>    
 </nav>
