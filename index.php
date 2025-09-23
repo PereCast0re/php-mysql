@@ -27,15 +27,25 @@ session_start();
         <!-- inclusion du login -->
         <?php include_once('login.php'); ?>
 
+        <!-- On se connecte à MySQL -->
+        <?php include_once('mysql.php'); ?>
+
+        <!-- Si tout va bien, on peut continuer -->
+        <?php
+            // On récupère tout le contenu de la table recipes
+            $sqlQuery = 'SELECT * FROM recipes';
+            $recipesStatement = $db->prepare($sqlQuery);
+            $recipesStatement->execute();
+            $recipes = $recipesStatement->fetchAll();
+        ?>
+
         <?php if(isset($_SESSION['LOGGED_USER'])): ?>
             <?php foreach(get_recipes($recipes) as $recipe) : ?>
-                <?php if($recipe['author'] == $_SESSION['LOGGED_USER']): ?>
                     <article>
                         <h3><?php echo $recipe['title']; ?> </h3>
                         <div><?php echo $recipe['recipe']; ?> </div>
                         <i><?php echo display_author($recipe['author'], $users); ?> </i>
                     </article>
-                <?php endif ?>
             <?php endforeach ?>
         <?php endif ?>
     
