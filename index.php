@@ -29,11 +29,13 @@ session_start();
 
         <?php if(isset($_SESSION['LOGGED_USER'])): ?>
             <?php foreach(get_recipes($recipes) as $recipe) : ?>
-            <article>
-                <h3><?php echo $recipe['title']; ?> </h3>
-                <div><?php echo $recipe['recipe']; ?> </div>
-                <i><?php echo display_author($recipe['author'], $users); ?> </i>
-            </article>
+                <?php if($recipe['author'] == $_SESSION['LOGGED_USER']): ?>
+                    <article>
+                        <h3><?php echo $recipe['title']; ?> </h3>
+                        <div><?php echo $recipe['recipe']; ?> </div>
+                        <i><?php echo display_author($recipe['author'], $users); ?> </i>
+                    </article>
+                <?php endif ?>
             <?php endforeach ?>
         <?php endif ?>
     
