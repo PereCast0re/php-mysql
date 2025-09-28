@@ -48,6 +48,7 @@ session_start();
                     </article>
                     <?php if($recipe['author'] == $_SESSION['LOGGED_USER']): ?>
                         <a href="form_update_recipe.php?recipe_id=<?php echo $recipe['recipe_id'] ?>" >Modifié la recette</a>
+                        <a  href="recipe_delete.php?recipe_id=<?php echo $recipe['recipe_id'] ?>" >Supprimer cette recette </a>
                     <?php endif ?>
             <?php endforeach ?>
         <?php endif ?>
