@@ -46,12 +46,12 @@ session_start();
                         <div><?php echo $recipe['recipe']; ?> </div>
                         <i><?php echo display_author($recipe['author'], $users); ?> </i>
                     </article>
+                    <?php if($recipe['author'] == $_SESSION['LOGGED_USER']): ?>
+                        <a href="form_update_recipe.php?recipe_id=<?php echo $recipe['recipe_id'] ?>" >Modifié la recette</a>
+                    <?php endif ?>
             <?php endforeach ?>
         <?php endif ?>
-        
-        <br>
 
-        <a href="ajout_recette_form.php">Ajouter une recette</a>
 
         <br>
     
